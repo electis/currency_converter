@@ -16,6 +16,16 @@ class WalletUser(AbstractUser):
         return self.email
 
 
+class Settings(models.Model):
+    main_currency = models.ForeignKey('Currency', on_delete=models.SET_NULL, null=True)
+    base_ready = models.BooleanField(default=False)
+    rate_url = models.CharField(max_length=255, default='')
+    last_error = models.CharField(max_length=255, default='')
+
+
 class Currency(models.Model):
-    name = models.CharField(max_length=3)  # EUR, USD, GPB, RUB, BTC
+    name = models.CharField(max_length=3, unique=True)
     rate = models.DecimalField(max_digits=18, decimal_places=8, null=True)
+
+    def __str__(self):
+        return self.name
