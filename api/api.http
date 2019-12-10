@@ -1,0 +1,19 @@
+### create
+
+POST http://127.0.0.1:8000/api/registration/
+Content-Type: application/json
+
+{
+  "email": "test@test.test", "password": "test", "currency": "BTC", "balance": 1
+}
+
+### transaction
+
+POST http://127.0.0.1:8000/api/transaction/
+Content-Type: application/json
+
+{
+  "email": "test@test.test", "password": "test", "to": "andrey@electis.ru", "amount": "0.1"
+}
+
+###
