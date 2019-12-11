@@ -7,13 +7,22 @@ Content-Type: application/json
   "email": "test@test.test", "password": "test", "currency": "BTC", "balance": 1
 }
 
-### transaction
+### transaction post
 
 POST http://127.0.0.1:8000/api/transaction/
 Content-Type: application/json
 
 {
-  "email": "test@test.test", "password": "test", "to": "andrey@electis.ru", "amount": "0.1"
+  "email": "andrey@electis.ru", "password": "T3stP@ss", "to": "test@test.test", "amount": "10"
+}
+
+### transaction get
+
+GET http://127.0.0.1:8000/api/transaction/
+Content-Type: application/json
+
+{
+  "email": "test@test.test", "password": "test"
 }
 
 ###
