@@ -33,6 +33,10 @@ class Settings(models.Model):
             settings.main_currency = Currency.objects.first()
             settings.base_ready = True
             settings.save()
+        else:
+            if Currency.objects.filter(rate__isnull=True).exists():
+                settings.base_ready = False
+                settings.save()
         return settings
 
 

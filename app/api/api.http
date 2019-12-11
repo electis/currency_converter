@@ -13,7 +13,7 @@ POST http://127.0.0.1:8000/api/transaction/
 Content-Type: application/json
 
 {
-  "email": "andrey@electis.ru", "password": "T3stP@ss", "to": "test@test.test", "amount": "10"
+  "email": "test@test.test", "password": "test", "to": "andrey@electis.ru", "amount": "10"
 }
 
 ### transaction get
